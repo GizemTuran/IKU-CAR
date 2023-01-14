@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "CarList";
+}
+@model iku_car_project.Models.Car
+
+<link rel="stylesheet" href="~/Content/CarInfo.css">
+
+<img class="carimage" src="~/images/Cars/@Html.Raw(Model.CImage)" />
+<br />
+<table class="infotable">
+
+    <tr>
+        <td><p style="font-weight:bold; color:red">Maker :</p></td>
+        <td><p style="font-weight: bold; color:black"> @Model.Maker</p></td>
+    </tr>
+    <tr>
+        <td><p style="font-weight:bold; color:red">Model :</p></td>
+        <td><p style="font-weight: bold; color: black"> @Model.Model</p></td>
+
+    </tr>
+    <tr>
+        <td><p style="font-weight:bold; color:red">Year :</p></td>
+        <td><p style="font-weight: bold; color: black"> @Model.Year</p></td>
+
+    </tr>
+    <tr>
+        <td><p style="font-weight:bold; color:red">Type :</p></td>
+        <td><p style="font-weight: bold; color: black"> @Model.CType </p></td>
+
+    </tr>
+    <tr>
+        <td><p style="font-weight:bold; color:red">Price :</p></td>
+        <td><p style="font-weight: bold; color: black"> $@Model.Price per day</p></td>
+
+    </tr>
+    <tr>
+        <td><p style="font-weight:bold; color:red">Reserved :</p></td>
+        <td>
+            @if (Model.CAvailable == true)
+            {
+
+
+                <p style="font-weight:bold; color:green">No, reserve it now</p>
+            }
+            else
+            {
+                <p style="font-weight:bold; color:red">Yes, please try again later</p>
+            }
+        </td>
+
+    </tr>
+</table>
+<br />
+@if (Model.CAvailable == true)
+{
+    <div class="sign_btn">
+        <a href="@Url.Action("CarInfo","Cars")">Reserve</a>
+    </div>
+}
+<div class="backbuttons">
+        @Html.ActionLink("Back to List", "CarList", "Cars", "",new { @class = "homebtn" })
+        @Html.ActionLink("Back to Home", "Index", "Home", "" ,new {@class="homebtn"})
+</div>
+

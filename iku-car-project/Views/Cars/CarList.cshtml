@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "CarList";
+}
+@model IEnumerable<iku_car_project.Models.Car>
+
+<link rel="stylesheet" href="~/Content/CarList.css">
+<table class="table">
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <div class="maker-model">
+                    @Html.DisplayFor(modelItem => item.Maker)
+                    @Html.DisplayFor(modelItem => item.Model)
+                </div>
+                <div class="year">
+                    @Html.DisplayFor(modelItem => item.Year)
+                    <br />
+                </div>
+                <div class="availabilitiy">
+                    @if (item.CAvailable == false)
+                    {
+                       <span class="unavailable"> @Html.Raw("Car is not available")</span>
+                    }
+                    else
+                    {
+                       <span class="available"> @Html.Raw("Car is available")</span>
+
+                    }
+                </div>
+            </td>
+            <td>
+                <img src="~/images/Cars/@item.CImage" />
+            </td>
+            <td>
+                <div class="sign_btn">
+                    <a href="@Url.Action("CarInfo","Cars", new { id=item.ID })">Car Information</a>
+                </div>
+            </td>
+        </tr>
+    }
+
+</table>
+
+

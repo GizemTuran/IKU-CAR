@@ -1,0 +1,22 @@
+﻿
+table td img{
+    height:100px;
+    width:150px;
+}
+
+.maker-model{
+    font-weight: bold;
+    color: black;
+}
+.year {
+    font-weight: bold;
+    color: #edbb18;
+}
+.available {
+    font-weight: bold;
+    color: green;
+}
+.unavailable {
+    font-weight: bold;
+    color: red;
+}

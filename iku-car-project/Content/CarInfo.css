@@ -1,0 +1,21 @@
+﻿.carimage {
+    width : 100%;
+}
+.carinfo {
+    color:red;
+    font-weight:bold;
+
+}
+
+.infotable{
+    width: 20%;
+}
+.backbuttons{
+    display: inline;
+    color:blue;
+    font-weight:bold;
+}
+.homebtn {
+    margin-left: 15px;
+    color: blue;
+}
